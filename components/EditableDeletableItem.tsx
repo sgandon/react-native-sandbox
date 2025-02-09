@@ -9,7 +9,7 @@ export interface Item {
 
 
 export default function EditableDeletableItem ( {item} : {item : Item}) {
-
+  //you may comment the <ReanimatedSwipeable> component and observe no more warnings.
   return (
      <ReanimatedSwipeable>
       <Text>
