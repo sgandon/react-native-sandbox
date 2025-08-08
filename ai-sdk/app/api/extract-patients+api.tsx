@@ -144,3 +144,5 @@ Retourne un tableau d'objets patients en analysant TOUTES les lignes du fichier.
     return new Response(`Internal Server Error: ${error instanceof Error ? error.message : 'Unknown error'}`, { status: 500 });
   }
 }
+export { PatientSchema };
+
