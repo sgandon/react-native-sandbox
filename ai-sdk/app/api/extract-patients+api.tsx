@@ -1,13 +1,6 @@
 import { createOpenAI } from '@ai-sdk/openai';
 import { streamObject } from 'ai';
-import { z } from 'zod';
-
-// Zod schema for patient extraction
-export const PatientSchema = z.object({
-  firstname: z.string().optional(),
-  lastname: z.string(),
-  male: z.boolean(),
-});
+import { PatientSchema } from './schema';
 
 const openai = createOpenAI({
   // custom settings, e.g.

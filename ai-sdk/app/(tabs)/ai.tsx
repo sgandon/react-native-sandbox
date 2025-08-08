@@ -2,12 +2,14 @@ import { View, Text, SafeAreaView, TouchableOpacity, ScrollView, StyleSheet } fr
 import { experimental_useObject as useObject } from '@ai-sdk/react';
 import { PatientSchema } from "../api/extract-patients+api";
 import z from "zod";
+import { fetch } from 'expo/fetch';
 
 export default function Ai() {
 
   const { object: extractedPatients, submit, isLoading: isExtracting, stop } = useObject({
     api: 'http://192.168.2.211:8082/api/extract-patients',
-    schema: z.array(PatientSchema),
+    schema: PatientSchema,
+    fetch: fetch as unknown as typeof globalThis.fetch,
     onError: (error) => {
       console.error('=== useObject ERROR ===');
       console.error('useObject error:', error);
